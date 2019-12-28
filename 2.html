@@ -4,6 +4,40 @@
   <title>이존길 박물관</title>
   <meta charset="utf-8">
   <link rel="stylesheet" href="style.css">
+  <script>
+    function NightDayHandler(self)  //존 = night 길 = day
+      {
+        var target = document.querySelector('body');
+        if(self.value === '존')
+        {
+          target.style.backgroundColor = 'black';
+          target.style.color = 'white';
+          self.value = '길';
+
+          var alist = document.querySelectorAll('a');
+          var i = 0;
+          while(i < alist.length)
+          {
+            alist[i].style.color = 'white' ;
+            i = i + 1;
+          }
+        }
+        else
+        {
+          target.style.backgroundColor = 'white';
+          target.style.color = 'black';
+          self.value = '존';
+
+          var alist = document.querySelectorAll('a');
+          var i = 0;
+          while(i < alist.length)
+          {
+            alist[i].style.color = 'black' ;
+            i = i + 1;
+          }
+        }
+      }
+  </script>
 </head>
 <body>
   <h1><a href="index.html">이존길 박물관 </a></h1>
@@ -13,6 +47,8 @@
       <li><a href="2.html">업적 </a></li>
       <li><a href="3.html">사진 </a></li>
       <li><a href="https://www.whitehouse.gov/" target="_blank">관련 기관</a></li>
+      <br>
+      <input type="button" value="존" onclick="NightDayHandler(this)">
     </ol>
     <div id="article">
       <img src="GilFace.jpg" width="20%">
